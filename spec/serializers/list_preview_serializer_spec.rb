@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe ListPreviewSerializer do
-  let(:list) { List.new(id: 123, name: "Mercado") }
-
-  subject { described_class.new list }
+  subject { described_class.new List.new(id: 123, name: "Mercado") }
 
   it "creates special JSON for the API" do
     expected = {
