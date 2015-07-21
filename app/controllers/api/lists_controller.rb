@@ -1,7 +1,7 @@
 class Api::ListsController < ApplicationController
 
   def index
-    render json: List.all, each_serializer: ListPreviewSerializer
+    render json: List.all, each_serializer: ListPreviewSerializer, root: false
   end
 
   def new
