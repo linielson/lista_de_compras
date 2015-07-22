@@ -1,9 +1,9 @@
 require "rails_helper"
 
 describe ListItemSerializer do
-  let(:product) { Product.new(id: 1, name: "Arroz") }
+  let(:product) { build :product, id: 1 }
 
-  subject { described_class.new ListItem.new(id: 123, quantity: 2, product: product) }
+  subject { described_class.new build(:list_item, id: 123, quantity: 2, product: product) }
 
   it "creates special JSON for the API" do
     expected = {
