@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Api::ProductsController, type: :controller do
-
   describe "GET #index" do
     let!(:sabao) { create :product, name: "Sabão" }
     let!(:arroz) { create :product, name: "Arroz" }

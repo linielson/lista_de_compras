@@ -5,7 +5,7 @@ FactoryGirl.define do
     trait :complete do
       after :build do |list|
         list.list_items << create(:list_item, list: list)
-        #tive que colocar a quantidade
+        # tive que colocar a quantidade
       end
     end
   end

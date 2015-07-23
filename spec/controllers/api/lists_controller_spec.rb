@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Api::ListsController, type: :controller do
-
   describe "GET #index" do
     let!(:sabao) { create :list, name: "Mercado" }
     let!(:arroz) { create :list, name: "Farmácia" }
@@ -15,7 +14,7 @@ RSpec.describe Api::ListsController, type: :controller do
     it "renders the JSON" do
       expected = ActiveModel::ArraySerializer.new([sabao, arroz],
         each_serializer: ListPreviewSerializer, root: false).to_json
-         #, root: false NÃO é necessário
+      # root: false NAO eh necessario
       expect(response.body).to eq expected
     end
   end
@@ -102,8 +101,9 @@ RSpec.describe Api::ListsController, type: :controller do
       end
 
       it do
-        should permit(:name, list_items_attributes: [:id, :list_id, :product_id,
-          :quantity, :_destroy]).for(:update, params: { id: list.id })
+        should permit(:name, list_items_attributes:
+          [:id, :list_id, :product_id, :quantity, :_destroy]).for(:update,
+            params: { id: list.id })
       end
     end
 
@@ -164,5 +164,4 @@ RSpec.describe Api::ListsController, type: :controller do
       end
     end
   end
-
 end

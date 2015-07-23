@@ -48,5 +48,4 @@ RSpec.describe "routing to products", type: :routing do
       id: "1"
     )
   end
-
 end
