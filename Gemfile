@@ -14,5 +14,6 @@ group :development, :test do
   gem 'spring'
   gem "factory_girl_rails", "4.4.0"
   gem 'simplecov', require: false
-  gem 'rubocop', '0.30.1', require: false  
+  gem 'rubocop', '0.30.1', require: false
+  gem 'codeclimate-test-reporter'
 end
